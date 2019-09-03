@@ -1,7 +1,8 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import {
   View,
   TouchableOpacity,
+  TouchableWithoutFeedback,
   Dimensions,
   Text,
   StyleSheet,
@@ -24,8 +25,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.container} onTouchEnd={this.toggle}>
-        <Fragment>
+      <TouchableWithoutFeedback
+        onPress={this.state.toggleDrawer && this.toggle}>
+        <View style={styles.container}>
           <TouchableOpacity onPress={this.toggle}>
             <Text>Toggle Me</Text>
           </TouchableOpacity>
@@ -35,8 +37,8 @@ class App extends React.Component {
               <Text>Sidebar</Text>
             </View>
           )}
-        </Fragment>
-      </View>
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }
