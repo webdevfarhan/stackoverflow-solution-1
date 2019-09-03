@@ -25,8 +25,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <TouchableWithoutFeedback
-        onPress={this.state.toggleDrawer && this.toggle}>
+      <TouchableWithoutFeedback onPress={this.toggle}>
         <View style={styles.container}>
           <TouchableOpacity onPress={this.toggle}>
             <Text>Toggle Me</Text>
@@ -59,7 +58,6 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    zIndex: 999,
   },
 });
 
